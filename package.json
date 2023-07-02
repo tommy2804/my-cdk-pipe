@@ -1,8 +1,8 @@
 {
-  "name": "cdk-ts",
+  "name": "cdk-implement",
   "version": "0.1.0",
   "bin": {
-    "cdk-ts": "bin/cdk-ts.js"
+    "cdk-implement": "bin/cdk-implement.js"
   },
   "scripts": {
     "build": "tsc",
