@@ -8,7 +8,7 @@ jobs:
   build:
     if: github.event.pull_request.merged == true
     name: Deploy AWS CDK Typescript Stack
-    runs-on: ububtu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Initiated By User
         run: echo $GITHUB_ACTOR
@@ -32,5 +32,5 @@ jobs:
         run: 'npx cdk diff CdkImplementStack --ci --require-approval never --no-asset-metadata'
         env:
           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
-          AWS_SECRET_ACEESS_KEY: ${{secrets.AWS_SECRET_ACEESS_KEY}}
+          AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           AWS_DEFAULT_REGION: 'eu-north-1'

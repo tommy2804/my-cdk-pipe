@@ -4,14 +4,13 @@ import * as CdkImplement from '../lib/cdk-implement-stack';
 
 test('My first stack Created', () => {
   const app = new cdk.App();
-  const stack = new CdkImplement.CdkImplementStack(app, 'lambdaFucntion');
+  const stack = new CdkImplement.CdkImplementStack(app, 'myTestStack');
   const template = Template.fromStack(stack);
 
-  template.hasResource('AWS::Lambda::Function', {});
-  //  {
-  //   functionName: 'first-cdk-lambda',
-  //   runtime: 'nodejs16.x',
-  //   handler: 'index.handler',
-  //   memorySize: 128,
-  // }
+  template.hasResourceProperties('AWS::Lambda::Function', {
+    FunctionName: 'first-cdk-lambda',
+    Runtime: 'nodejs16.x',
+    Handler: 'index.handler',
+    MemorySize: 128,
+  });
 });
