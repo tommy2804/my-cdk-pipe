@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     name: Build and Test AWS CDK Typescript Stack
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     steps:
       - name: Initiated By User
         run: echo $GITHUB_ACTOR
